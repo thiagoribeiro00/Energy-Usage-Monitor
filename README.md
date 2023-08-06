@@ -45,6 +45,8 @@ Database: Data persistence can be implemented in the database.py module, using a
 <code><img height="32" src="https://raw.githubusercontent.com/github/explore/main/topics/python/python.png" alt="PYTHON"/></code>
 <code><img height="32" src="https://raw.githubusercontent.com/github/explore/main/topics/python/sqllite3.png" alt="SQLite"/></code>
 
+</code>
+
 
 How to Run the Project
 Prerequisites: Make sure you have Python installed on your system.
