@@ -49,6 +49,22 @@ def calculate_grouped_data(data, group_column, aggregate_column, aggregation='su
         return grouped_data
     except KeyError:
         raise KeyError(f"A coluna '{group_column}' é necessária no DataFrame.")
+    
+def preprocess_datetime_columns(data):
+    data['data'] = pd.to_datetime(data['data'])
+    return data
+
+def clean_and_transform_data(data):
+    # Exemplo: Tratamento de dados faltantes
+    data['consumo_kw'].fillna(0, inplace=True)
+    
+    # Exemplo: Conversão para outra unidade de energia
+    data['consumo_mwh'] = data['consumo_kw'] / 1000
+    
+    # Exemplo: Normalização dos dados
+    data['consumo_normalizado'] = (data['consumo_mwh'] - data['consumo_mwh'].min()) / (data['consumo_mwh'].max() - data['consumo_mwh'].min())
+    
+    return data
 
 # Exemplo de uso:
 if __name__ == "__main__":

@@ -43,3 +43,10 @@ def plot_weekday_consumption(data):
         plt.show()
     except KeyError:
         raise KeyError("A coluna 'consumo_kw' é necessária no DataFrame.")
+    
+def perform_regression_analysis(data):
+    X = data.index.values.reshape(-1, 1)
+    y = data['consumo_mwh']
+    model = LinearRegression()
+    model.fit(X, y)
+    return model.coef_[0], model.intercept_

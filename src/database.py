@@ -31,6 +31,17 @@ def close_connection(connection):
     if connection:
         connection.close()
 
+def create_table(connection):
+    sql_create_table = '''
+        CREATE TABLE IF NOT EXISTS consumo_energia (
+            data TEXT,
+            consumo_kw REAL,
+            consumo_mwh REAL,
+            consumo_normalizado REAL
+        )
+    '''
+    connection.execute(sql_create_table)
+
 # Exemplo de uso:
 if __name__ == "__main__":
     db_name = "my_database.db"

@@ -24,6 +24,14 @@ def plot_graph():
     canvas.draw()
     canvas.get_tk_widget().pack(side=tk.TOP, pady=10, padx=10)
 
+def plot_consumption_over_time(data):
+    plt.plot(data['data'], data['consumo_mwh'], label='Consumo (MWh)')
+    plt.xlabel('Data')
+    plt.ylabel('Consumo (MWh)')
+    plt.title('Consumo de Energia ao Longo do Tempo')
+    plt.legend()
+    plt.show()
+
 root = tk.Tk()
 root.title("Exemplo de Interface")
 
