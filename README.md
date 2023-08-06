@@ -43,7 +43,7 @@ Database: Data persistence can be implemented in the database.py module, using a
 # Programming Languages Used
 
 <code><img height="32" src="https://raw.githubusercontent.com/github/explore/main/topics/python/python.png" alt="PYTHON"/></code>
-<code><img height="32" src="https://raw.githubusercontent.com/github/explore/main/topics/python/sqllite.png" alt="SQLite"/></code>
+<code><img height="32" src="https://raw.githubusercontent.com/github/explore/main/topics/python/sqllite.png" alt="SQLite"/></code> 
 
 </code>
 
