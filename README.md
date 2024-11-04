@@ -1,84 +1,36 @@
-# EnergyUsageMonitor - - End-to-End Project
+# Monitoramento de Consumo de Energia
 
-This is an energy consumption monitoring project that uses real or simulated data to analyze and control energy consumption over time. The project is developed in Python and follows a modular structure to facilitate implementation and maintenance.
+Este é um aplicativo de monitoramento e análise de dados de consumo de energia, desenvolvido com **Streamlit** e **OpenAI**. O objetivo é fornecer uma interface interativa para visualizar, filtrar e realizar perguntas sobre dados de consumo de energia, utilizando um modelo de linguagem para responder a consultas sobre os dados.
 
-# Project Structure
+## Descrição do Projeto
 
-The project is organized as follows:
+O aplicativo permite aos usuários filtrar dados históricos de consumo de energia com base em datas, ID da casa, status de ocupação e tipo de casa. Além de exibir uma tabela de dados filtrados, o aplicativo oferece visualizações gráficas e uma seção de perguntas, onde o modelo de linguagem da OpenAI pode responder a perguntas específicas sobre o conjunto de dados exibido.
 
-```
-energy_consumption_monitoring/
-│
-├── data/
-│   ├── consumption_energy.csv          # CSV file with real energy consumption data (or simulated data)
-│
-├── src/
-│   ├── __init__.py
-│   ├── data_processing.py          # Module for processing consumption data
-│   ├── database.py                 # Module to handle SQLite database (not implemented)
-│   ├── analysis.py                 # Module for data analysis (not implemented)
-│   ├── user_interface.py           # Module for user interface (not implemented)
-│   ├── control_system.py           # Module for consumption control system
-│
-├── main.py                         # Main file for program execution
-├── requirements.txt               # File with project dependencies
-├── README.md                      # This file, containing information about the project
-├── generate_simulated_data.py     # File to generate simulated energy consumption data (optional)
-```
+### Funcionalidades Principais
 
-# Features
+- **Filtros Personalizados**: Possibilidade de filtrar dados por intervalo de datas, ID da casa, status de ocupação e tipo de casa.
+- **Visualização Gráfica**: Gráfico de linha que mostra o consumo de energia ao longo do tempo para o intervalo selecionado.
+- **Perguntas Inteligentes**: Utilização da API da OpenAI para responder a perguntas sobre os dados filtrados, permitindo obter insights de maneira interativa.
 
-The project includes the following features:
+## Estrutura do Aplicativo
 
-Data Loading and Processing: The data_processing.py module is responsible for loading energy consumption data from a CSV file and performing initial data processing, such as converting the date column to the datetime format.
+- **Filtros na Sidebar**: Permite ajustar o intervalo de datas, ID da casa, status de ocupação e tipo de casa para refinar a visualização dos dados.
+- **Tabela de Dados Filtrados**: Exibe os dados de consumo de energia com base nos filtros selecionados.
+- **Gráfico de Consumo ao Longo do Tempo**: Exibe um gráfico de linha que permite identificar picos e tendências no consumo de energia.
+- **Seção de Perguntas**: Possibilita ao usuário fazer perguntas sobre os dados e receber respostas do modelo da OpenAI.
 
-Consumption Control: The control_system.py module implements the consumption control system. It allows you to set daily, weekly, and monthly consumption goals, calculate energy savings based on goals and consumption history, generate feedback on performance against goals, and display consumption history charts.
+## Objetivos do Projeto
 
-Trend Analysis: Trend analysis of consumption over time can be added to the analysis.py module, using techniques such as moving averages or linear regression. (This feature is not implemented, only mentioned as a suggested improvement).
+O projeto tem como objetivo fornecer uma plataforma de análise que auxilie na visualização e compreensão do consumo de energia em diferentes residências. As funcionalidades permitem que analistas e gestores de energia:
 
-User Interface: The user interface can be implemented in the user_interface.py module, using the customtkinter library or another of your choice to create a user-friendly graphical interface. (This feature is not implemented, only mentioned as a suggested improvement).
+1. **Identifiquem Padrões de Consumo**: Analisem os picos de consumo e as tendências ao longo do tempo.
+2. **Respondam a Perguntas Complexas**: Façam perguntas detalhadas sobre os dados e obtenham respostas com o uso de inteligência artificial.
+3. **Explore Diferentes Segmentações de Dados**: Filtre o consumo por status de ocupação e tipo de residência para explorar como esses fatores influenciam o consumo.
 
-Database: Data persistence can be implemented in the database.py module, using an SQLite database to store consumption goals and history. (This feature is not implemented, only mentioned as a suggested improvement).
+## Possíveis Insights
 
-# Programming Languages Used
+Este aplicativo pode fornecer insights valiosos, incluindo:
 
-<code><img height="32" src="https://raw.githubusercontent.com/github/explore/main/topics/python/python.png" alt="PYTHON"/></code>
-
-</code>
-
-
-How to Run the Project
-Prerequisites: Make sure you have Python installed on your system.
-
-Install Dependencies: Open a terminal or command prompt, navigate to the project directory, and execute the following command to install the dependencies:
-
-```
-pip install -r requirements.txt
-```
-Generate Simulated Data (optional): If you want to generate simulated data for testing the project, execute the following command:
-
-```
-python generate_simulated_data.py
-```
-
-Run the Project: To run the project, execute the following command: 
-
- ```
-python main.py
-```
-Interact with the Project: The user interface allows you to set consumption goals and view consumption history over time. Use it to control energy consumption and analyze performance against the goals.
-
-# Notes
-
-This project is a basic framework that can be expanded and improved according to the specific needs of your use case.
-Feel free to add more features, enhance the user interface, implement advanced analyses, or persist data in a database according to your requirements.
-
-# Author
-
-Thiago Ribeiro.
-
-
-
-
-
-
+- **Identificação de Picos de Consumo**: Facilita a identificação de picos sazonais e diários de consumo.
+- **Análise por Status de Ocupação e Tipo de Residência**: Mostra como diferentes status de ocupação ou tipos de residência afetam o consumo.
+- **Tendências de Consumo ao Longo do Tempo**: Auxilia no monitoramento de padrões e mudanças no consumo de energia.
